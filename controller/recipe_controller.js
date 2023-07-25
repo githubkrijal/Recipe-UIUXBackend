@@ -1,9 +1,9 @@
 const Recipe = require('../models/Recipe')
-const category = require('../models/category')
+// const category = require('../models/category')
 
 const getallrecipes = (req, res, next) => {
     Recipe.find()
-        .populate('category')
+        // .populate('category')
         .then((recipes) => {
             res.status(200).json({
                 success: true,
@@ -44,7 +44,7 @@ const deleteallrecipes = (req, res) => {
 
 const getRecipeByID = (req, res, next) => {
     Recipe.findById(req.params.id)
-        .populate('category')
+        // .populate('category')
         .then((recipe) => {
             res.status(200).json({
                 success: true,

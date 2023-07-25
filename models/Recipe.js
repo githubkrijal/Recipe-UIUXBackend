@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const category = require('./category')
 const user=require('./User')
 
 const RecipeSchema = mongoose.Schema({
@@ -22,10 +21,7 @@ const RecipeSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    category:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Category'
-    },
+   
     
 }, { timestamps: true })
 module.exports = mongoose.model('Recipe', RecipeSchema)
